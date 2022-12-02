@@ -37,8 +37,11 @@ class vendingdriver
                         if(machine.Up7.instock != 0)
                         {
                         System.out.print("That will be $" + String.format("%.2f",machine.upPrice) + ", insert cash\n");
-                        
-                        machine.purchase(choice);
+                        cashscan.scanner(sc);
+                        if(cashscan.confirmPrice(machine.Up7.price))
+                        {
+                            machine.purchase(choice);
+                        } 
                         break;
                         }
                         break;
@@ -49,7 +52,11 @@ class vendingdriver
                         if(machine.Pepsi.instock != 0)
                         {
                         System.out.println("That will be $" + String.format("%.2f",machine.pepPrice) + ", insert cash\n");
-                        machine.purchase(choice);
+                        cashscan.scanner(sc);
+                        if(cashscan.confirmPrice(machine.Pepsi.price))
+                        {
+                            machine.purchase(choice);
+                        } 
                         break;
                         }
                         break;
@@ -60,7 +67,11 @@ class vendingdriver
                         if(machine.Coke.instock != 0)
                         {
                         System.out.println("That will be $" + String.format("%.2f",machine.colPrice) + ", insert cash\n");
-                        machine.purchase(choice);
+                        cashscan.scanner(sc);
+                        if(cashscan.confirmPrice(machine.Coke.price))
+                        {
+                            machine.purchase(choice);
+                        } 
                         break;
                         }
                         break;
@@ -71,7 +82,11 @@ class vendingdriver
                         if(machine.Water.instock != 0)
                         {
                         System.out.println("That will be $" + String.format("%.2f",machine.watPrice) + ", insert cash\n");
-                        machine.purchase(choice);
+                        cashscan.scanner(sc);
+                        if(cashscan.confirmPrice(machine.Water.price))
+                        {
+                            machine.purchase(choice);
+                        } 
                         break;
                         }
                         break;
