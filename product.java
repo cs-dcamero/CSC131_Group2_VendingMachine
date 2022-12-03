@@ -2,7 +2,7 @@ public class product
 {
     double price;
     int instock; 
-    
+
     product()
     {
        // brand = null;

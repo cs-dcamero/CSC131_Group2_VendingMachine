@@ -1,4 +1,4 @@
-//import java.util.Scanner;
+import java.util.Scanner;
 
 public class vendingMachine extends product
 {
@@ -6,13 +6,12 @@ public class vendingMachine extends product
     //Stock of items
     //product itemsStocked[] = new product[5];
 
-        product DrPepper = new product(2.00, 10);
-        product Up7 = new product(1.50, 10);
-        product Pepsi = new product(1.00, 10);
-        product Coke = new product(2.00, 10);
-        product Water = new product(0.99, 10);
+    product DrPepper = new product(2.00, 10);
+    product Up7 = new product(1.50, 10);
+    product Pepsi = new product(1.00, 10);
+    product Coke = new product(2.00, 10);
+    product Water = new product(0.99, 10);
     
-
     //Sold items tracker
     int drS = 0;
     int upS = 0;
@@ -22,13 +21,6 @@ public class vendingMachine extends product
     int totalsales = 0;
     
     int MAX_CAP = 15; // max capacity that can be stocked
-
-    double drPrice = 2.00;
-    double upPrice = 1.50;
-    double pepPrice = 1.00;
-    double colPrice = 2.00;
-    double watPrice = 0.99;
-    double totalPrice = 0.00;
 
     void clientDisplay()
         {
@@ -125,12 +117,12 @@ public class vendingMachine extends product
     
     void sales()
     {
-    totalPrice = drPrice * drS + upPrice * upS + pepPrice * pepS + colPrice * colS + watPrice * watS;
-    System.out.println("\nAmount of Dr Pepper cans sold:  " + drS +"     Money made: $"  + String.format("%.2f",drPrice * drS));
-    System.out.println("Amount of 7up cans sold:        " + upS + "     Money made: $"  + String.format("%.2f",upPrice * upS));
-    System.out.println("Amount of Pepsi cans sold:      " + pepS + "     Money made: $" + String.format("%.2f",pepPrice * pepS));
-    System.out.println("Amount of Coca Cola cans sold:  " + colS + "     Money made: $" + String.format("%.2f",colPrice * colS));
-    System.out.println("Amount of Water cans sold:      " + watS + "     Money made: $" + String.format("%.2f",watPrice * watS));
+    double totalPrice = DrPepper.price * drS + Up7.price * upS + Pepsi.price * pepS + Coke.price * colS + Water.price * watS;
+    System.out.println("\nAmount of Dr Pepper cans sold:  " + drS +"     Money made: $"  + String.format("%.2f",DrPepper.price * drS));
+    System.out.println("Amount of 7up cans sold:        " + upS + "     Money made: $"  + String.format("%.2f",Up7.price * upS));
+    System.out.println("Amount of Pepsi cans sold:      " + pepS + "     Money made: $" + String.format("%.2f",Pepsi.price * pepS));
+    System.out.println("Amount of Coca Cola cans sold:  " + colS + "     Money made: $" + String.format("%.2f",Coke.price * colS));
+    System.out.println("Amount of Water cans sold:      " + watS + "     Money made: $" + String.format("%.2f",Water.price * watS));
     System.out.println("Total products sold:     " + totalsales + "      Total Money made: $" + String.format("%.2f",totalPrice) + "\n");
     }
     
@@ -221,6 +213,51 @@ public class vendingMachine extends product
             }
         }
     }
+
+    void changeprice(int choice, Scanner sc)
+    {
+        switch (choice)
+        {
+            case 1: 
+            {
+                double newPrice = sc.nextDouble();
+                DrPepper.price = newPrice; 
+                break;
+            }
+
+            case 2: 
+            {
+                double newPrice = sc.nextDouble();
+                Up7.price = newPrice;
+                break;
+            }
+
+            case 3: 
+            {
+                double newPrice = sc.nextDouble();
+                Pepsi.price = newPrice;
+                break;
+            }
+
+            case 4: 
+            {
+                double newPrice = sc.nextDouble();
+                Coke.price = newPrice;
+                break;
+            }
+
+            case 5: 
+            {
+                double newPrice = sc.nextDouble();
+                Water.price = newPrice;
+                break;
+            }
+        }
+
+
+
+    }
+
 
 }
 

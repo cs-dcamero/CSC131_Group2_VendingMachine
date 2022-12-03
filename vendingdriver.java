@@ -9,7 +9,7 @@ class vendingdriver
 
             vendingMachine machine = new vendingMachine();
             moneyHandler cashscan = new moneyHandler();   
-            
+
             boolean chosen = false;
             while(chosen == false)
             {   
@@ -21,7 +21,7 @@ class vendingdriver
                     {
                         if(machine.DrPepper.instock != 0)
                         {
-                            System.out.print("That will be $" + String.format("%.2f",machine.drPrice) + ", insert cash \n\n");
+                            System.out.print("That will be $" + String.format("%.2f",machine.DrPepper.price) + ", insert cash \n\n");
                             cashscan.scanner(sc);
                             if(cashscan.confirmPrice(machine.DrPepper.price))
                             {
@@ -36,7 +36,7 @@ class vendingdriver
                     {
                         if(machine.Up7.instock != 0)
                         {
-                        System.out.print("That will be $" + String.format("%.2f",machine.upPrice) + ", insert cash\n");
+                        System.out.print("That will be $" + String.format("%.2f",machine.Up7.price) + ", insert cash\n");
                         cashscan.scanner(sc);
                         if(cashscan.confirmPrice(machine.Up7.price))
                         {
@@ -51,7 +51,7 @@ class vendingdriver
                     {
                         if(machine.Pepsi.instock != 0)
                         {
-                        System.out.println("That will be $" + String.format("%.2f",machine.pepPrice) + ", insert cash\n");
+                        System.out.println("That will be $" + String.format("%.2f",machine.Pepsi.price) + ", insert cash\n");
                         cashscan.scanner(sc);
                         if(cashscan.confirmPrice(machine.Pepsi.price))
                         {
@@ -66,7 +66,7 @@ class vendingdriver
                     {
                         if(machine.Coke.instock != 0)
                         {
-                        System.out.println("That will be $" + String.format("%.2f",machine.colPrice) + ", insert cash\n");
+                        System.out.println("That will be $" + String.format("%.2f",machine.Coke.price) + ", insert cash\n");
                         cashscan.scanner(sc);
                         if(cashscan.confirmPrice(machine.Coke.price))
                         {
@@ -81,7 +81,7 @@ class vendingdriver
                     {
                         if(machine.Water.instock != 0)
                         {
-                        System.out.println("That will be $" + String.format("%.2f",machine.watPrice) + ", insert cash\n");
+                        System.out.println("That will be $" + String.format("%.2f",machine.Water.price) + ", insert cash\n");
                         cashscan.scanner(sc);
                         if(cashscan.confirmPrice(machine.Water.price))
                         {
@@ -117,7 +117,17 @@ class vendingdriver
             
                                 case 2: //change price
                                 {
-                                    System.out.print("change price to $$"); 
+                                    System.out.println("\nWhich product price do you want to change?");
+                                    System.out.println("1.) Dr Pepper ["+ machine.DrPepper.price +"]");
+                                    System.out.println("2.) 7up       ["+ machine.Up7.price +"]");
+                                    System.out.println("3.) Pepsi     ["+ machine.Pepsi.price +"]");
+                                    System.out.println("4.) Coca Cola ["+ machine.Coke.price +"]");
+                                    System.out.println("5.) Water     ["+ machine.Water.price +"]");
+                                    System.out.println("6.) Exit ");
+
+                                    choice = sc.nextInt();
+                                    System.out.println("\nSet the new price");
+                                    machine.changeprice(choice, sc);
                                     break;
                                 }
 
