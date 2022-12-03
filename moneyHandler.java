@@ -3,7 +3,6 @@ import java.util.Scanner;
 class moneyHandler
 {
     double money;
-    vendingMachine machine1 = new vendingMachine();
 
     void scanner(Scanner sc)
     {

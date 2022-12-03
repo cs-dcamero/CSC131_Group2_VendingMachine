@@ -4,14 +4,15 @@ public class vendingMachine extends product
 {
     //int stock;
     //Stock of items
-    //product itemsStocked[] = new product[5];
+    product itemsStocked[] = new product[5];
 
         product DrPepper = new product(2.00, 10);
         product Up7 = new product(1.50, 10);
         product Pepsi = new product(1.00, 10);
         product Coke = new product(2.00, 10);
         product Water = new product(0.99, 10);
-    
+   
+        
 
     //Sold items tracker
     int drS = 0;
