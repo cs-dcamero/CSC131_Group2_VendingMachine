@@ -1,7 +1,5 @@
 import java.io.*;
 import java.util.Scanner;
-import java.io.FileWriter;
-//import java.util.concurrent.TimeUnit.*;
 import java.io.PrintStream;
 
 public class vendingMachine extends product
