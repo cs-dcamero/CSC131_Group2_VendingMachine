@@ -1,7 +1,5 @@
 import java.util.Scanner;
-//
-// TESTING
-//
+
 class vendingdriver
 {    
         public static void main(String[] args) throws Exception 
@@ -15,8 +13,11 @@ class vendingdriver
             boolean chosen = false;
             while(chosen == false)
             {   
+                machine.clearDisplay(); // clear the terminal
+
                 machine.clientDisplay();
                 int choice = sc.nextInt();
+                
                 switch (choice) 
                 {
                     case 1: // purchase 1st drink
@@ -28,6 +29,7 @@ class vendingdriver
                             if(cashscan.confirmPrice(machine.DrPepper.price))
                             {
                                 machine.purchase(choice);
+                                machine.dispeningMessage();
                             }                            
                             break;
                         }
@@ -43,6 +45,7 @@ class vendingdriver
                         if(cashscan.confirmPrice(machine.Up7.price))
                         {
                             machine.purchase(choice);
+                            machine.dispeningMessage();
                         } 
                         break;
                         }
@@ -58,6 +61,7 @@ class vendingdriver
                         if(cashscan.confirmPrice(machine.Pepsi.price))
                         {
                             machine.purchase(choice);
+                            machine.dispeningMessage();
                         } 
                         break;
                         }
@@ -73,6 +77,7 @@ class vendingdriver
                         if(cashscan.confirmPrice(machine.Coke.price))
                         {
                             machine.purchase(choice);
+                            machine.dispeningMessage();
                         } 
                         break;
                         }
@@ -88,6 +93,7 @@ class vendingdriver
                         if(cashscan.confirmPrice(machine.Water.price))
                         {
                             machine.purchase(choice);
+                            machine.dispeningMessage();
                         } 
                         break;
                         }

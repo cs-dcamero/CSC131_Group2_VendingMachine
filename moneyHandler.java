@@ -5,11 +5,9 @@ class moneyHandler
     double money;
 
     void scanner(Scanner sc)
-    {
-        //System.out.println("input money");
+    {       
         money = sc.nextDouble();
-        //confirmPrice();
-               
+                   
     }
 
     Boolean confirmPrice(double itemprice)
@@ -25,7 +23,7 @@ class moneyHandler
             return true;
         }
               
-        System.out.println("NOT ENOUGH MONEY \n" + "CHANGE DISPENSED");
+        System.out.println("\n\n===================== NOT ENOUGH MONEY===================== \n\n\n" + "===================== CHANGE DISPENSED ===================== ");
         return false;
         
     }

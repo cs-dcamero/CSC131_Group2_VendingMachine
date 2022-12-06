@@ -1,4 +1,8 @@
+import java.io.*;
 import java.util.Scanner;
+import java.io.FileWriter;
+//import java.util.concurrent.TimeUnit.*;
+import java.io.PrintStream;
 
 public class vendingMachine extends product
 {
@@ -22,6 +26,30 @@ public class vendingMachine extends product
     int totalsales = 0;
     
     int MAX_CAP = 15; // max capacity that can be stocked
+
+    void clearDisplay()
+    {
+        timeDelay();
+
+        System.out.print("\033[H\033[2J");  
+        System.out.flush();
+    }
+
+    void timeDelay()
+    {
+        try {
+            Thread.sleep(3000);
+          } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+          }
+    }
+
+    void dispeningMessage()
+    {
+        System.out.println("\n============== DISPENSING PRODUCT ==============");
+    }
+
+ 
 
     void clientDisplay()
         {
@@ -117,7 +145,21 @@ public class vendingMachine extends product
         }
     
     void sales()
-    {
+    {    
+        PrintStream o;
+        PrintStream console = System.out;
+        try
+        {
+            o = new PrintStream(new File("stats.txt"));
+            System.setOut(o);
+        }
+        catch(Exception exception)
+        { 
+            System.out.println("Failed Writing to file!");
+        }
+
+        
+
     double totalPrice = DrPepper.price * drS + Up7.price * upS + Pepsi.price * pepS + Coke.price * colS + Water.price * watS;
     System.out.println("\nAmount of Dr Pepper cans sold:  " + drS +"     Money made: $"  + String.format("%.2f",DrPepper.price * drS));
     System.out.println("Amount of 7up cans sold:        " + upS + "     Money made: $"  + String.format("%.2f",Up7.price * upS));
@@ -125,7 +167,19 @@ public class vendingMachine extends product
     System.out.println("Amount of Coca Cola cans sold:  " + colS + "     Money made: $" + String.format("%.2f",Coke.price * colS));
     System.out.println("Amount of Water cans sold:      " + watS + "     Money made: $" + String.format("%.2f",Water.price * watS));
     System.out.println("Total products sold:     " + totalsales + "      Total Money made: $" + String.format("%.2f",totalPrice) + "\n");
-    }
+
+    System.setOut(console);
+    
+    //double totalPrice = DrPepper.price * drS + Up7.price * upS + Pepsi.price * pepS + Coke.price * colS + Water.price * watS;
+    System.out.println("\nAmount of Dr Pepper cans sold:  " + drS +"     Money made: $"  + String.format("%.2f",DrPepper.price * drS));
+    System.out.println("Amount of 7up cans sold:        " + upS + "     Money made: $"  + String.format("%.2f",Up7.price * upS));
+    System.out.println("Amount of Pepsi cans sold:      " + pepS + "     Money made: $" + String.format("%.2f",Pepsi.price * pepS));
+    System.out.println("Amount of Coca Cola cans sold:  " + colS + "     Money made: $" + String.format("%.2f",Coke.price * colS));
+    System.out.println("Amount of Water cans sold:      " + watS + "     Money made: $" + String.format("%.2f",Water.price * watS));
+    System.out.println("Total products sold:     " + totalsales + "      Total Money made: $" + String.format("%.2f",totalPrice) + "\n");
+
+
+    }  
     
     void purchase(int drinknum)
     {
