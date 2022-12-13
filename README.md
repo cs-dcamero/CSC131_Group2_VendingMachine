@@ -1,10 +1,13 @@
 # CSC131_Group2_VendingMachine
-This is Release 2 of a Vedning Machine Project for
+This is Release 2 of a Vending Machine Project for
 CSc 131 at California State University, Sacramento
 Instructor: Dr. Swayam Pati
 
-To use, you will need to run "java vendingdriver" from the command line in the appropriate folder.
-This simulates 1 cycle of a vending machine. Meaning, all data from a single instance will be lost.
+To use, you will need to run "javac vendingdriver.java" from the command line in the appropriate folder to compile the program.
+Then, run " java vendingdriver" to run the driver for the program. Also, make sure that JDK is installed on PC.
+AND that it is on the environment path variable.
+
+This program simulates 1 cycle of a vending machine. Meaning, all data from a single instance will be lost.
 
 To retrieve a copy of vending machine sale, enter 7 at the prompt.
 This give the user access to the admin menu.
